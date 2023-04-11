@@ -1,0 +1,9 @@
+.Header {
+    margin: auto;
+    max-width: 1024px;
+    height: 20px;
+    background: #FAFAFA;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 10px;
+}

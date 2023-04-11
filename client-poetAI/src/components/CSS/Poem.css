@@ -1,0 +1,18 @@
+.Poem {
+    display: flex;
+    flex-direction: column;
+    overflow: inherit;
+    margin: auto;
+    max-width: 1024px;
+    height: auto;
+    background: #FAFAFA;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    margin-top: 10px;
+    overflow: auto;
+}
+
+pre{
+    font-family: 'Lexend', sans-serif;
+}

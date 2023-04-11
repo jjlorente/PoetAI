@@ -1,27 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
+import { Form } from './components/Form'
+import { Poem } from './components/Poem'
 
 function App() {
+  const [poemData, setPoemData] = useState('');
+  const [poemType, setPoemType] = useState('');
+  const [dedicated, setDedicated] = useState('');
 
-  const [backendData, setBackendData] = useState(undefined)
-
-
-  useEffect(() => {
-    fetch("/api").then(
-      response => response.json()
-    ).then(
-      data => {
-        setBackendData(data)
-      }
-    )
-  }, [])
+  const handleFormSubmit = (poem, type, dedicated) => {
+    setPoemData(poem.replace(/\./g, ".\n"))
+    setPoemType(type)
+    setDedicated(dedicated)
+  }
 
   return (
     <div>
-      {(typeof backendData === 'undefined') ? (
-        <p>Loading...</p>
-      ) : (
-        <p>{backendData}</p>
-      )}
+      <Form onSubmit={handleFormSubmit}/>
+      <Poem poem={poemData} poemType={poemType} dedicated={dedicated}/>
     </div>
   )
 }

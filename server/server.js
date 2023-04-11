@@ -1,22 +1,32 @@
 const express = require('express')
 const app = express()
+const cohere = require('cohere-ai')
 
-const cohere = require('cohere-ai');
-cohere.init('Bp6duAksIMB2gIc6jav5RuhUlHvMJomTp1R2X1hz'); // This is your trial API key
 
-app.get("/api", (req,res) => {
+
+require('dotenv').config()
+const cohereApiKey = process.env.COHERE_API_KEY;
+cohere.init(cohereApiKey)
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.post("/api/poems", (req,res) => {
+    const poemType = req.body['poemType'];
+    const dedicatedTo = req.body['dedicated'];
+    const description = req.body['descriptionPoem'];
+
     (async () => {
-    const response = await cohere.generate({
-        model: 'command-xlarge-beta',
-        prompt: 'Generate a Satire-style poem that has 3 paragraphs, which is the poem dedicated to my partner Laura, where her name Laura appears in the poem',
-        max_tokens: 122,
-        temperature: 1.5,
-        k: 0,
-        stop_sequences: [],
-        return_likelihoods: 'NONE'
-    });
-        console.log(response.generations)
-        res.json(response.body.generations[0].text)
+        const response = await cohere.generate({
+            model: 'command-xlarge-beta',
+            prompt: `Escribe un poema ${poemType}. Este tipo de poema es ${description}, lo que significa que debe tener ciertas características propias del tipo de poema seleccionado. Además, el poema debe estar dedicado a ${dedicatedTo}, y su nombre debe aparecer en el poema.`,
+            max_tokens: 200,
+            temperature: 1.5,
+            k: 0,
+            stop_sequences: [],
+            return_likelihoods: 'NONE'
+        });
+            res.json(response.body.generations[0].text)
     })();
 })
 

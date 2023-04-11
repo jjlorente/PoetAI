@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #E9E6DE;
+  margin: 0.85rem;
+  font-family: 'Lexend', sans-serif;
+  margin-right: 0.85rem !important;
 }
 
 code {

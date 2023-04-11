@@ -1,0 +1,73 @@
+.Form {
+    margin-top: 10px !important;
+    margin: auto;
+    max-width: 1024px;
+    height: auto;
+    background: #FAFAFA;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 10px;
+}
+
+.poem-type{
+    margin-bottom: 10px;
+}
+
+.input-person{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input{
+    padding: 5px;
+    font-family: 'Lexend', sans-serif;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    max-width: 310px;
+}
+
+.div-form{
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.buttons-types{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+button{
+    background-color: #ffbbf6;
+    border: 1px solid #ff7ae9;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: 'Lexend', sans-serif;
+    border-radius: 8px;
+}
+
+.buttons-types button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: 'Lexend', sans-serif;
+    border-radius: 8px;
+}
+
+.buttons-types button.active {
+    background-color: #ffbbf6;
+    border: 1px solid #ff7ae9;
+}
+
+.loader-container {
+    margin-top: 10px !important;
+    width: 100% !important;
+    margin: 0 auto;
+}
