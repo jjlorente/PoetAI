@@ -45,11 +45,24 @@
 
 button{
     background-color: #ffbbf6;
-    border: 1px solid #ff7ae9;
+    border: 1px solid #ff7ae917;
     padding: 10px 15px;
     cursor: pointer;
     font-family: 'Lexend', sans-serif;
     border-radius: 8px;
+}
+
+button.form-button:hover{
+    background-color: #F0DFF3 !important;
+}
+
+button{
+    transition: all 0.5s ease;
+}
+
+button.create-button:hover{
+    background-color: #641258 !important;
+    color: white !important;
 }
 
 .buttons-types button {

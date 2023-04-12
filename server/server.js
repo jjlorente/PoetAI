@@ -19,9 +19,9 @@ app.post("/api/poems", (req,res) => {
     (async () => {
         const response = await cohere.generate({
             model: 'command-xlarge-beta',
-            prompt: `Escribe un poema ${poemType}. Este tipo de poema es ${description}, lo que significa que debe tener ciertas características propias del tipo de poema seleccionado. Además, el poema debe estar dedicado a ${dedicatedTo}, y su nombre debe aparecer en el poema.`,
+            prompt: `Escribe un poema tipo ${poemType}: ${description}. Dedicado a ${dedicatedTo}.`,
             max_tokens: 200,
-            temperature: 1.5,
+            temperature: 0.8,
             k: 0,
             stop_sequences: [],
             return_likelihoods: 'NONE'

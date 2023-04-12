@@ -10,9 +10,30 @@
     border: 1px solid rgba(0, 0, 0, 0.15);
     padding: 10px;
     margin-top: 10px;
-    overflow: auto;
+    overflow-x: auto;
 }
 
 pre{
     font-family: 'Lexend', sans-serif;
+}
+
+.poem-pre{
+    max-width: 100%;
+    text-align: center;
+    margin-top: -20px;
+    word-wrap: break-word;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+.copy-text {
+    display: flex;
+    justify-content: right;
+}
+
+.CopyToClipboard {
+    cursor: pointer;
 }

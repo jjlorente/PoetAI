@@ -8,7 +8,8 @@ function App() {
   const [dedicated, setDedicated] = useState('');
 
   const handleFormSubmit = (poem, type, dedicated) => {
-    setPoemData(poem.replace(/\./g, ".\n"))
+    poem = poem.replace(",", ",\n").replace(".", ".\n")
+    setPoemData(poem)
     setPoemType(type)
     setDedicated(dedicated)
   }

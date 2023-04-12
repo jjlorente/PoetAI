@@ -45,7 +45,7 @@ export const Form = (props) => {
         key={index} 
         type="button" 
         onClick={() => handleOptionClick(type)}
-        className={selectedOption === type ? 'active' : ''}
+        className={selectedOption === type ? 'active form-button' : 'form-button' }
         >
             {type}
     </button>
@@ -60,16 +60,16 @@ export const Form = (props) => {
                     {buttons}
                 </div>
                 {selectedOption && (
-                    <div>
+                    <>
                         <span>{selectedDescription}</span>
-                    </div>
+                    </>
                 )}
             </div>
             <div className='input-person div-form'>
                 <label htmlFor="dedicado-a">Nombre al que deseas dedicar tu poema:</label>
                 <input id="dedicado-a" required className='input' minLength={4} maxLength={30} placeholder='Rocío / Ismael / Toby / fútbol / mar / etc...' type="text" name="dedicado-a"/>
             </div>
-            <button type="sumbit">¡Crear poema!</button>
+            <button className='create-button' type="sumbit">¡Crear poema!</button>
         </form>
         {loading && (
             <div className="loader-container">
