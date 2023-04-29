@@ -22,7 +22,7 @@ app.post("/api/poems", (req,res) => {
             prompt: `Escribe un poema tipo ${poemType}: ${description}. Dedicado a ${dedicatedTo}.`,
             max_tokens: 200,
             temperature: 0.8,
-            k: 0,
+            k: 50,
             stop_sequences: [],
             return_likelihoods: 'NONE'
         });
